@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class ThaBlog extends AbstractMigration
+class CreateArticles extends AbstractMigration
 {
     /**
      * Change Method.
@@ -25,27 +25,27 @@ class ThaBlog extends AbstractMigration
      * Remember to call "create()" or "update()" and NOT "save()" when working
      * with the Table class.
      */
-    public function change()
-    {
+     public function change()
+     {
 
-        $table = $this->table('articles');
-        $table->addColumn('title', 'string', [
-            'default' => 'Incognito Articalis',
-            'limit' => 50,
-            'null' => false,
-        ]);
-        $table->addColumn('body', 'text', [
-            'null' => false,
-        ]);
-        $table->addColumn('created', 'datetime', [
-            'default' => null,
-            'null' => false,
-        ]);
-        $table->addColumn('modified', 'datetime', [
-            'default' => null,
-            'null' => false,
-        ]);
-        $table->create();
+         $table = $this->table('articles');
+         $table->addColumn('title', 'string', [
+             'default' => 'Incognito Articalis',
+             'limit' => 50,
+             'null' => false,
+         ]);
+         $table->addColumn('body', 'text', [
+             'null' => false,
+         ]);
+         $table->addColumn('created', 'datetime', [
+             'default' => null,
+             'null' => false,
+         ]);
+         $table->addColumn('modified', 'datetime', [
+             'default' => null,
+             'null' => false,
+         ]);
+         $table->create();
 
-    }
+     }
 }
