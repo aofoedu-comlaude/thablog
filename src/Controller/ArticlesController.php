@@ -34,7 +34,7 @@
                 $article = $this->Articles->newEntity();
                 if ($this->request->is('post'))
                 {
-                    $this->request->data['category_id'] = 1;
+                    // $this->request->data['category_id'] = 1;
                     $article = $this->Articles->patchEntity($article, $this->request->data);
                     if ($this->Articles->save($article))
                     {
@@ -44,6 +44,9 @@
                     $this->Flash->error(__('Unable to add your article.'));
                 }
                 $this->set('article', $article);
+
+                $categories = $this->Articles->Categories->find('treeList');
+                $this->set(compact('categories'));
             }
 
             public function edit($id = null)
@@ -63,6 +66,9 @@
 
                 }
                 $this->set('article', $article);
+
+                $categories = $this->Articles->Categories->find('treeList');
+                $this->set(compact('categories'));
 
             }
 

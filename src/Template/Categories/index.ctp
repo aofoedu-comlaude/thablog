@@ -10,8 +10,6 @@
             <tr>
                 <th>Id</th>
                 <th>Parent Id</th>
-                <th>Lft</th>
-                <th>Rght</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Created</th>
@@ -23,8 +21,6 @@
             <tr>
                 <td><?= $category->id ?></td>
                 <td><?= $category->parent_id ?></td>
-                <td><?= $category->lft ?></td>
-                <td><?= $category->rght ?></td>
                 <td><?= h($category->name) ?></td>
                 <td><?= h($category->description) ?></td>
                 <td><?= h($category->created) ?></td>
