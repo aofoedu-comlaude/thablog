@@ -34,6 +34,7 @@
                 $article = $this->Articles->newEntity();
                 if ($this->request->is('post'))
                 {
+                    $this->request->data['category_id'] = 1;
                     $article = $this->Articles->patchEntity($article, $this->request->data);
                     if ($this->Articles->save($article))
                     {

@@ -25,7 +25,7 @@ class CreateArticles extends AbstractMigration
      * Remember to call "create()" or "update()" and NOT "save()" when working
      * with the Table class.
      */
-     public function change()
+     public function up()
      {
 
          $table = $this->table('articles');
@@ -46,6 +46,19 @@ class CreateArticles extends AbstractMigration
              'null' => false,
          ]);
          $table->create();
+
+     }
+
+     public function down()
+     {
+
+         $table = $this->table('articles');
+         $table->removeColumn('id')->save();
+         $table->removeColumn('title')->save();
+         $table->removeColumn('body')->save();
+         $table->removeColumn('created')->save();
+         $table->removeColumn('modified')->save();
+         $this->removeTable('articles');
 
      }
 }
