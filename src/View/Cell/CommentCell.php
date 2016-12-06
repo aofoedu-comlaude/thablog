@@ -28,7 +28,8 @@ class CommentCell extends Cell
         // $this->loadModel('Comments');
         // $section = $this->Comments->find('body')->order(['id' => 'ASC']);
 
-        
+        echo "bdfbndrbr";
+
 
     }
 }
