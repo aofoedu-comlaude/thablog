@@ -22,16 +22,17 @@ class CommentCell extends Cell
      *
      * @return void
      */
-    public function display()
+     
+    public function display($article)
     {
 
         // $this->loadModel('Comments');
         // $section = $this->Comments->find('body')->order(['id' => 'ASC']);
-
+//debug($article);
         $this->loadModel('Comments');
-        $comments = $this->Comments->find('all');
-        $this->set('the_comments', $comments->count());
-        $this->set('this_comment', $comments);
+        $allcomments = $this->Comments->find();
+        $comments = $allcomments->toArray();
+        $this->set('the_comments', $comments);
 
 
 

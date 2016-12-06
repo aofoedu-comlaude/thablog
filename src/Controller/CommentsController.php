@@ -29,13 +29,15 @@ class CommentsController extends AppController
         $this->set(compact('comment'));
     }
 
-    public function add()
+    public function add($articleId)
     {
-
-        $category = $this->Comments->newEntity();
+        // debug($this->request);exit;
+        $comment = $this->Comments->newEntity();
         if ($this->request->is('post'))
             {
             $comment = $this->Comments->patchEntity($comment, $this->request->data);
+            $comment->user_id = $this->Auth->user('id');
+            //debug($this->request);exit;
             if ($this->Comments->save($comment))
             {
 
