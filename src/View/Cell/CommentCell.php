@@ -28,7 +28,11 @@ class CommentCell extends Cell
         // $this->loadModel('Comments');
         // $section = $this->Comments->find('body')->order(['id' => 'ASC']);
 
-        echo "bdfbndrbr";
+        $this->loadModel('Comments');
+        $comments = $this->Comments->find('all');
+        $this->set('the_comments', $comments->count());
+        $this->set('this_comment', $comments);
+
 
 
     }

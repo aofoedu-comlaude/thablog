@@ -8,6 +8,13 @@ use Cake\Event\Event;
 class CommentsController extends AppController
 {
 
+    public function initialize()
+    {
+        parent::initialize();
+
+        $this->loadComponent('Flash');
+    }
+
     public function index()
     {
 
