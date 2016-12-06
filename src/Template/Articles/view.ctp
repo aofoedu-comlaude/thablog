@@ -2,4 +2,4 @@
 <p><?= h($article->body) ?></p>
 <p><small>Created: <?= $article->created->format(DATE_RFC850) ?></small></p>
 
-<?= $cell = $this->cell('Comment');
+<?= $cell = $this->cell('Comment'); ?>
