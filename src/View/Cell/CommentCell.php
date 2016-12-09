@@ -22,7 +22,7 @@ class CommentCell extends Cell
      *
      * @return void
      */
-     
+
     public function display($article)
     {
 
@@ -32,9 +32,7 @@ class CommentCell extends Cell
         $this->loadModel('Comments');
         $allcomments = $this->Comments->find();
         $comments = $allcomments->toArray();
-        $this->set('the_comments', $comments);
-
-
+        $this->set('the_comments', $comments); 
 
     }
 }

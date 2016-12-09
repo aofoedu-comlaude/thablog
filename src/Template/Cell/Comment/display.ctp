@@ -13,6 +13,15 @@
 </textarea>
 <br>
 <?php
+
+echo $this->Form->created();
+echo $this->Form->input('nickname');
+echo $this->Form->textarea('body');
+echo $this->Form->button(__('Post Comment'));
+echo $this->Form->end();
+
+?>
+<?php
 //debug($article);
 ?>
-<?= $this->Html->link('Add post', ['controller' => 'Comments', 'action' => 'add', 12]) ?>
+<?= $this->Html->link('Add post', ['controller' => 'Comments', 'action' => 'add', $this_comment->id]) ?>
