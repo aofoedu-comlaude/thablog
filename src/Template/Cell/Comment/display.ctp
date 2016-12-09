@@ -24,4 +24,3 @@ echo $this->Form->end();
 <?php
 //debug($article);
 ?>
-<?= $this->Html->link('Add post', ['controller' => 'Comments', 'action' => 'add', $this_comment->id]) ?>
